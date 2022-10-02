@@ -13,8 +13,8 @@ devise_for :customers,skip: [:passwords], controllers: {
   get '/customers/contact' => 'public/customers#contact'
 
   scope module: :public do
-    resources :items,only: [:index,:show]
-    get 'search' => 'items#search'
+    resources :articles,only: [:new,:index,:show,:edit]
+    get 'search' => 'articles#search'
     # deviseと衝突してしまうので、オリジナルに変更
     get 'edit/customers' => 'customers#edit'
     patch 'update/customers' => 'customers#update'
