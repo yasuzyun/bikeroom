@@ -1,0 +1,15 @@
+<table>
+  <tbody>
+      <tr>
+          <th>タイトル</th>
+          <th>内容</th>
+      </tr>
+      <% @articles.each do |article| %>
+      <tr>
+          <td><%= article.title %></td>
+          <td><%= article.body %></td>
+          <td><%= link_to '編集',edit_article_path(article) %></td>
+      </tr>
+      <% end %>
+  </tbody>  
+</table>

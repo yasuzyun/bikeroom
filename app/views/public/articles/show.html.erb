@@ -1,1 +1,17 @@
-<h1>show</h1>
+<table>
+  <tbody>
+  	  <% @articles.each do |article| %>
+        <tr>
+            <th>タイトル</th>
+            <td><%= article.title %></td>
+        </tr>
+        <tr>
+            <th>内容</th>
+            <td><%= article.body %></td>
+        </tr>
+        <td><%= link_to '編集',edit_article_path(article) %></td>
+          <td><%= link_to '削除',article_path(article),
+                          method: :delete,data: {confirm:'削除してもいいですか？'}%></td>
+      <% end %>
+  </tbody>  
+</table>
