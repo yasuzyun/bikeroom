@@ -39,7 +39,7 @@ devise_scope :customer do
   
  scope module: :public do
     root 'homes#top'
-    get '/about' => 'homes#top'
+    get '/about' => 'homes#about'
     resources :customers,     only: [:show, :edit, :update, :destroy]
     resources :articles,  only: [:index, :show, :new, :create, :edit, :update, :destroy] do
       resource  :likes,     only: [:create, :destroy]
@@ -55,6 +55,9 @@ devise_scope :customer do
     resources :articles,  only: [:index, :show, :edit, :update, :destroy]
     get '/search' => 'searches#search'
   end
+  
+  get 'maps/index'
+  resources :maps, only: [:index]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 

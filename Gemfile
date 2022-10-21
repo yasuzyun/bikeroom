@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
 end
 
 group :development do
@@ -64,3 +65,8 @@ gem 'net-imap'
 gem 'net-pop'
 gem 'dotenv-rails'
 gem 'kaminari'
+gem 'dotenv-rails'
+gem 'gmaps4rails'
+gem 'geocoder'
+gem "gon"
+gem 'haml-rails'

@@ -1,15 +1,14 @@
-<table>
-  <tbody>
-      <tr>
-          <th>タイトル</th>
-          <th>内容</th>
-      </tr>
-      <% @articles.each do |article| %>
-      <tr>
-          <td><%= article.title %></td>
-          <td><%= article.body %></td>
-          <td><%= link_to '編集',edit_article_path(article) %></td>
-      </tr>
-      <% end %>
-  </tbody>  
-</table>
+
+<h1>投稿編集</h1>
+<span>現在ログイン中のユーザー：<%= current_customer.first_name %></span>
+<%= form_for(@article, url: article_path(@article)) do |f| %>
+    <div>
+        <%= f.label :タイトル %><br>
+        <%= f.text_field :title, autofocus: true, :placeholder =>"#{@article.title}" %>
+    </div>
+    <div>
+        <%= f.label :中身 %><br>
+        <%= f.text_area :body, :placeholder =>"#{@article.body}" %>
+    </div>
+    <div><%= f.submit "更新する" %></div>
+<% end %>

@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 2022_10_07_023122) do
     t.integer "customer_id", null: false
     t.string "title", null: false
     t.text "body", null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
