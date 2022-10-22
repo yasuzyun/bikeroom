@@ -1,7 +1,5 @@
-class Public::CommentsController < ApplicationController
-    
-    before_action :set_article, only: [:create, :destroy] 
-    
+class CommentsController < ApplicationController
+  
   def create
   @comment = @article.comments.create(comment_params)
   if @comment.save
@@ -10,7 +8,7 @@ class Public::CommentsController < ApplicationController
     flash.now[:alert] = 'コメントに失敗しました'
     render article_path(@article)
   end
-  end
+ end
 
 def destroy
   @comment = Comment.find(params[:id])
@@ -28,7 +26,7 @@ def set_article
 end
 
 def comment_params
-  params.required(:comment).permit(:comment_content).merge(customer_id: current_customer.id, article_id: params[:article_id])
+  params.required(:comment).permit(:comment_text).merge(customer_id: current_customer.id, article_id: params[:article_id])
 end
 
 end

@@ -14,8 +14,11 @@ class Public::ArticlesController < ApplicationController
 
   def show
      @articles = Article.all
-     #@article = Article.find(params[:id])
-    #@comment = Comment.new
+     #@article = Article.new
+     @article = Article.find(params[:id])
+     @comments = @article.comments  #投稿詳細に関連付けてあるコメントを全取得
+    # @comment = current_customer.comments.new  #投稿詳細画面でコメントの投稿を行うので、formのパラメータ用にCommentオブジェクトを取得
+     @comment = Comment.new
   end
 
   def new
@@ -50,6 +53,7 @@ class Public::ArticlesController < ApplicationController
   def edit
     #@article = Article.all
     @article = Article.find(params[:id])
+   
   end
 
   def update
@@ -64,10 +68,10 @@ class Public::ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to request.referer
+    redirect_to articles_path, notice: "削除しました"
     
-   # @articles = Article.find(params[:id])
-    #if @articles.destroy
+   #@article = Article.find(params[:id])
+    #if @article.destroy
      # redirect_to article_path
     #else
     #  redirect_to article_path(@article)
@@ -86,4 +90,7 @@ class Public::ArticlesController < ApplicationController
     params.require(:article).permit(:title, :body, :address, :latitude, :longitude)
     #params.require(:map).permit(:address, :latitude, :longitude, :title, :comment)
   end
+  
+
+
 end

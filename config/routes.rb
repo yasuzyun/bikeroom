@@ -40,12 +40,12 @@ devise_scope :customer do
  scope module: :public do
     root 'homes#top'
     get '/about' => 'homes#about'
-    resources :customers,     only: [:show, :edit, :update, :destroy]
+    resources :customers,     only: [:show,:create, :edit, :update, :destroy]
     resources :articles,  only: [:index, :show, :new, :create, :edit, :update, :destroy] do
       resource  :likes,     only: [:create, :destroy]
       resources :comments,  only: [:create, :destroy]
     end
-    get 'articles/:id' => 'articles#show'
+    get 'articles/:id' => 'articles#index'
     get '/customer/unsubscribe' => 'customer#unsubscribe'
     get '/search' => 'searches#search'
   end

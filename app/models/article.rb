@@ -1,8 +1,8 @@
 class Article < ApplicationRecord
   belongs_to :customer
-  has_many :likes, dependent: :destroy
+  #has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :article, dependent: :destroy
+  #has_many :article, dependent: :destroy
   has_one :spot
   #accepts_attachments_for :article_images, attachment: :image, append: true
 
@@ -13,7 +13,7 @@ class Article < ApplicationRecord
   #validates :latitude, presence: true
   #validates :longitude, presence: true
   validates :title, presence: true   
-
+  
   # バリデーションの前に送信されたaddressの値によってジオコーディング(緯度経度の算出)を行う
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
@@ -22,7 +22,7 @@ class Article < ApplicationRecord
   #after_validation :geocode, if: :address_changed?
 
 
-  #def liked_by(customer, article)
-   # Like.where(customer_id: customer.id, article_id: article.id).exists?
-  #end
+  def liked_by(customer, article)
+    Like.where(customer_id: customer.id, article_id: article.id).exists?
+  end
 end
