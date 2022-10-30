@@ -18,17 +18,17 @@ namespace :admin do
     get '/admins' => 'homes#top'
   	get '/search'=>'search#search'
     resources :customers,only: [:index,:show,:edit,:update]
-  	resources :items,only: [:index,:new,:create,:show,:edit,:update,]
-  	resources :genres,only: [:index,:create,:edit,:update, :show]
-  	resources :orders,only: [:index,:show,:update] do
-  	  member do
-        get :current_index
-        resource :order_details,only: [:update]
-      end
-      collection do
-        get :today_order_index
-      end
-    end
+  	#resources :items,only: [:index,:new,:create,:show,:edit,:update,]
+  	#resources :genres,only: [:index,:create,:edit,:update, :show]
+  	#resources :orders,only: [:index,:show,:update] do
+  	 # member do
+    #    get :current_index
+     #   resource :order_details,only: [:update]
+    #  end
+     # collection do
+      #  get :today_order_index
+      #end
+  #  end
   end
 
 
@@ -40,9 +40,14 @@ devise_scope :customer do
  scope module: :public do
     root 'homes#top'
     get '/about' => 'homes#about'
-    resources :customers,     only: [:show,:create, :edit, :update, :destroy]
+    resources :customers,     only: [:show,:create, :edit, :update, :destroy] do
+      collection do
+  	     get 'quit'
+  	     patch 'out'
+  	  end
+  	end  
     resources :articles,  only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-      resource  :likes,     only: [:create, :destroy]
+      resources  :likes,     only: [:create, :destroy]
       resources :comments,  only: [:create, :destroy]
     end
     get 'articles/:id' => 'articles#index'

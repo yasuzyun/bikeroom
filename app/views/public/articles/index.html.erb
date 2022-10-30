@@ -1,17 +1,22 @@
-  <table>
-    <h3>投稿一覧in</h3>
-  <tbody>
-      <tr>
-          <th>タイトル</th>
-          <th>内容</th>
-      </tr>
-      <% @articles.each do |article| %>
-      <tr>
-          <td><%= article.title %></td>
-          <td><%= article.body %></td>
-          <td><%= link_to 'コメント',article_path(article) %></td>
-      </tr>
+    <h3 style="text-align:center; color:white; background-color:black;">投稿一覧</h3>.
+   <% @articles.each do |article| %>
+     <div class="dai">
+        <span class="sabudai">タイトル</br>
+          <span class="sabutou"><%= article.title %> </span>
+        </span>
+        
+         <span class="sabudai">内容</br>
+          <span class="sabutou"><%= article.body %> </span>
+        </span>
+        
+         <span class="sabudai">投稿者</br>
+           <span class="sabutou"><%= current_customer.last_name %> </span>
+        </span>
+         <span class="sabutou"><%= link_to 'コメント',article_path(article) %></span>
+     </div>
+      
+      
       <% end %>
-  </tbody>  
-</table>
+  
+
 

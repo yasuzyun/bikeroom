@@ -1,10 +1,29 @@
-<h2>コメント</h2>
+<h2 class="mt-3">投稿へコメント</h2>
+<h4>コメント</h4>
           <%= form_with model:[@article, @comment], local: true do |f| %>
           <%= f.text_area :comment_content %>
           <%= f.submit "コメント" %>
 　　　    <% end %>
-<table>
-  <h2 class="mt-3">投稿へコメント</h2>
+ <h4>コメント一覧</h4>
+　　　  
+            <% @comments.each do |comment| %>
+                <li class="comments">
+                   <%= comment.comment_content %><br>
+                  <%= link_to 'コメントを削除する', article_comment_path(@article.id,comment.id), confirm: 'Are you sure?', method: :delete %>
+               </li>
+             <% end %>
+             
+ <% if @article.liked?(current_customer) %>
+    <%= link_to article_like_path(@article.id), method: :delete do %>
+        <span style="color:red;">❤︎</span>
+    <% end %>
+<% else %>
+    <%= link_to article_likes_path(@article.id), method: :post do %>
+        <span>❤︎</span>
+    <% end %>
+<% end %>         
+            <table>
+
   <tbody>
   	 <%= form_for(@article, url: article_path(@article)) do |f| %>
         <tr>
@@ -21,10 +40,7 @@
           <td><%= link_to '投稿削除',article_path(@article), method: :delete,data: {confirm:'削除してもいいですか？'}%></td>
           
           
-         <h2>コメント一覧</h2>
-　　　  <% @comments.each do |comment| %>
-  　  　　<%= comment.comment_content   %>
-　　  　<% end %>
+        
     
       <% end %>
   </tbody>  

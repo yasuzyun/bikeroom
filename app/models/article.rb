@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
   belongs_to :customer
-  #has_many :likes, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   #has_many :article, dependent: :destroy
   has_one :spot
@@ -22,7 +22,10 @@ class Article < ApplicationRecord
   #after_validation :geocode, if: :address_changed?
 
 
-  def liked_by(customer, article)
-    Like.where(customer_id: customer.id, article_id: article.id).exists?
+  #def liked_by(customer, article)
+   # Like.where(customer_id: customer.id, article_id: article.id).exists?
+  #end
+  def liked?(customer)
+   likes.where(customer_id: customer.id).exists?
   end
 end

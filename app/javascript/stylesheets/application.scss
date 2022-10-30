@@ -1,2 +1,60 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+//#new_customer {
+  //background-color: #ff0000;
+//}
+
+.field {
+    text-align: center;
+}
+
+.sign-up-small-cell {
+    text-align: center;
+}
+
+.input {
+   margin-left : 25%;
+   margin-top : 10px;
+    
+}
+
+.actions {
+    text-align: center;
+}
+
+.box {
+    background-image:url("/assets/haikei_1.jpg");
+    background-size: 100%, 100%;
+}
+.nm {
+    margin-left : 80px;
+}
+
+.field {
+    margin-top : 10px;
+}
+
+.form-group {
+    margin-left : 80px;
+}
+
+.tizu {
+   margin-left: 15%;
+}
+
+.dai {
+   text-align: center;
+   }
+
+.sabudai {
+   display: inline-block;
+   width: 20%;
+   height: 60px;
+}
+
+.sabutou {
+   display: inline-block;
+   width: 20%;
+   height: 60px;
+}

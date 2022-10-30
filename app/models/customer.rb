@@ -7,13 +7,14 @@ class Customer < ApplicationRecord
   #has_many :addresses, dependent: :destroy
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   
   validates :last_name, presence: true
   validates :first_name, presence: true
   validates :last_name_kana, presence: true
   validates :first_name_kana, presence: true
   validates :email, uniqueness: true
-  validates :comment_text, presence: true, length: { maximum: 1000 }
+  #validates :comment_text, presence: true, length: { maximum: 1000 }
 
   def self.search_for(content,method)
     return none if content.blank?

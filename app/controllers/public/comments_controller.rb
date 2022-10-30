@@ -13,7 +13,7 @@ class Public::CommentsController < ApplicationController
   end
 
 def destroy
-  @comment = Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
   if @comment.destroy
     redirect_to article_path(@article), notice: 'コメントを削除しました'
   else
@@ -21,6 +21,13 @@ def destroy
     render article_path(@article)
   end
 end
+  
+  
+  
+  #Comment.find(params[:id]).destroy
+  #redirect_to article_path(@article), notice: 'コメントしました'
+
+
 
 private
 def set_article
