@@ -10,9 +10,9 @@ class Article < ApplicationRecord
   validates :title  , presence: true, length: {maximum: 200}
   validates :body, presence: true, length: {maximum: 200}
   # 存在性のバリデーション
-  #validates :latitude, presence: true
-  #validates :longitude, presence: true
-  validates :title, presence: true   
+  validates :lat, presence: true
+  validates :lng, presence: true
+  validates :address, presence: true, length: {maximum: 200} 
   
   # バリデーションの前に送信されたaddressの値によってジオコーディング(緯度経度の算出)を行う
   geocoded_by :address

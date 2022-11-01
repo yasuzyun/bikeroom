@@ -5,8 +5,8 @@ class CreateArticles < ActiveRecord::Migration[6.1]
       t.string :title, null: false
       t.text :body, null: false
       t.string :address
-      t.float :latitude
-      t.float :longitude
+      t.float :lat
+      t.float :lng
       t.timestamps null: false
     end
   end

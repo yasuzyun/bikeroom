@@ -1,16 +1,20 @@
 
-<h1>投稿編集</h1>
-<span>現在ログイン中のユーザー：<%= current_customer.first_name %></span>
+<h2 style="text-align:center; color:white; background-color:black;">投稿編集</h2>
+
 <%= form_for(@article, url: article_path(@article)) do |f| %>
-    <div>
+    <div class="dai">
         <%= f.label :タイトル %><br>
         <%= f.text_field :title, autofocus: true, :placeholder =>"#{@article.title}" %>
     </div>
-    <div>
-        <%= f.label :中身 %><br>
+    <div class="dai">
+        <%= f.label :内容 %><br>
         <%= f.text_area :body, :placeholder =>"#{@article.body}" %>
     </div>
-    <div><%= f.submit "更新する" %></div>
+    <div class="dai">
+        <%= f.label :場所の住所 %><br>
+        <%= f.text_area :address, :placeholder =>"#{@article.address}" %>
+    </div>
+    <div class="dai"><%= f.submit "更新する" %></div>
     
     
 <% end %>
