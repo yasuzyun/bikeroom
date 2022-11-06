@@ -22,6 +22,7 @@
             <li class="nav-item"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'btn btn-outline-secondary mx-3 my-1'  %></li>
           <% elsif current_admin %>
             <li class="nav-item"><%= link_to "会員一覧", admin_customers_path, class: 'btn btn-outline-secondary mx-3 my-1'  %></li>
+            <li class="nav-item"><%= link_to "投稿一覧", admin_articles_path, class: 'btn btn-outline-secondary mx-3 my-1'  %></li>
             <li class="nav-item"><%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete, class: 'btn btn-outline-secondary mx-3 my-1'  %></li>
           <% else %>
             <li class="nav-item"><%= link_to "概要", about_path,class: 'btn btn-outline-secondary mx-3 my-1' %></li>

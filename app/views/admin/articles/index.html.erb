@@ -1,0 +1,29 @@
+<h3>投稿一覧表示</h3>
+<!--<div>
+  <% if customer_signed_in? %>
+    <%= link_to 'ログアウト', destroy_customer_session_path, method: :delete %>
+    <%= "#{current_customer.first_name}さんはログイン中です"%>
+  <% else %>
+    <%= link_to 'ユーザー新規登録', new_customer_registration_path %>
+    <%= link_to 'ログイン', new_customer_session_path %>
+  <% end %>
+</div>
+
+<div>
+  <% if customer_signed_in? && current_customer.admin? %>
+    <%= link_to '管理者用:投稿ページ', new_admin_article_path %>
+  <% end %>
+</div>
+-->
+<div class="articles">
+  
+    <% @articles.each do |(article)| %>
+      <li>
+        <td><%= article.title %></td>
+        <td><%= article.body %></td>
+        <td><%= article.address %></td>
+         <%= link_to "管理者が削除するよ", articles_path(article), method: :delete %>
+      </li>
+    <% end %>
+
+</div>
