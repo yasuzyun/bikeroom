@@ -17,6 +17,6 @@ class Admin::ArticlesController < ApplicationController
   #end
 
   def article_params
-    params.require(:article).permit(:title, :body, :address, :lat, :lng,:id)
+    params.require(:article).permit(:title, :body, :address, :lat, :lng, :id)
   end
 end

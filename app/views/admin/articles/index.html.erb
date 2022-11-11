@@ -15,15 +15,27 @@
   <% end %>
 </div>
 -->
-<div class="articles">
-  
-    <% @articles.each do |(article)| %>
-      <li>
-        <td><%= article.title %></td>
-        <td><%= article.body %></td>
-        <td><%= article.address %></td>
-         <%= link_to "管理者が削除するよ", articles_path(article), method: :delete %>
-      </li>
-    <% end %>
 
+  
+    <div class="dai">
+    <% @articles.each do |article| %>
+       
+        <tr>タイトル : </tr>
+        <div class="sabudai">
+        <td><%= article.title %></td>
+        </div>
+      
+        <tr>内容 : </tr>
+        <div class="sabudai">
+        
+        <td><%= article.body %></td>
+        </div>
+      
+        <tr>投稿場所 : </tr>
+          <div class="sabudai">
+        
+        <td><%= article.address %></td>
+        </div>
+          </br>
+    <% end %>
 </div>
