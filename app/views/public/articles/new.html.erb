@@ -15,30 +15,34 @@
               </div>
               
               <div class="form-group col-10">
-                <%= f.label :address,"住所" %>
-                <%= f.text_field :address, :value =>"住所", id: :address %>
-              </div>
+                <%= f.label :address,"住所または名称" %>
+                <%= f.text_field :address, :value =>"", :placeholder =>"ここに場所を入力",id: :address %>
+               
+                <p></p>
+                <p>住所又は名称を入力し、下の検索ボタンを押すと経度緯度は自動入力されます。</p>
+                <%= f.label :lat,"緯度" %>
+                <%= f.text_field :lat, :value =>"", id: :lat %>
+             　　 <%= f.label :lng,"経度" %>
+                <%= f.text_field :lng, :value =>"", id: :lng %>
+   　           </div>
               
-            　<div class="form-group col-10">
+            　<!--<div class="form-group col-3">
                <%= f.label :lat,"緯度" %>
    　　　　　 　　　　 <%= f.text_field :lat, :value =>"緯度", id: :lat %>
               </div>
               
-              <div class="form-group col-10">
+              <div class="form-group col-3">
       　　　　　　　　 <%= f.label :lng,"経度" %>
    　　　　  　　　　 <%= f.text_field :lng, :value =>"経度", id: :lng %>
- 　　　　　　　　　　 </div>
- 　　　　　　　　　　 <div class="form-group">
-                <%= f.submit "投稿する", class:  "btn btn-success"%>
-              </div>
-　　　　　　<% end %>
+ 　　　　　　　　　　 </div>-->
+ 　　　　　
 
               
              
 
 <h2>検索Map</h2>
 
-<input id="address" type="textbox" value=""  placeholder="ここに場所を入力">
+<!--<input id="address" type="textbox" value=""  placeholder="ここに場所を入力">-->
 <input type="button" value="検索" onclick="codeAddress()">
 <p>マーカーをドラック＆ドロップで位置の調整で場所を入力してください。<p>
 <div id='map'></div>
@@ -106,4 +110,7 @@ function codeAddress(){
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['API_KEY'] %>&callback=initMap" async defer></script>
               
-　
+　　　　　　 <div class="form-group">
+                <%= f.submit "投稿する", class:  "btn btn-success"%>
+              </div>
+　　　　　　<% end %>
