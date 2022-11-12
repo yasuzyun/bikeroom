@@ -3,6 +3,7 @@ class Admin::ArticlesController < ApplicationController
   
   def index
     @articles = Article.includes(:customer).order("created_at DESC")
+    @article = Article.all.page(params[:page]).per(10)
   end
   
   def destroy

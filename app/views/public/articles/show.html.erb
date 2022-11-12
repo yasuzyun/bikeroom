@@ -1,4 +1,6 @@
 <h2 style="text-align:center; color:white; background-color:black;">投稿へコメント</h2>
+<br>
+<td><%= link_to '一覧へ戻る',articles_path(@article),class:  "btn btn-success" %></td>
 
 <%= form_for(@article, url: article_path(@article)) do |f| %>
         <div class="dai">
@@ -23,6 +25,8 @@
             <td></td>
           <% end %>
         </div>
+
+
 
 
 
