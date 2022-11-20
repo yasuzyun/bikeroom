@@ -10,4 +10,3 @@ Admin.create(
   email: 'admin@gmail.com',
   password: 'aaaaaa'
   )
-AdminUser.create( email: 'admin@gmail.com', password: 'aaaaaa')
