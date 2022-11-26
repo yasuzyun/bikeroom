@@ -13,11 +13,13 @@
 ### 主な利用シーン
 ツーリング、旅行
 
+
 ## 設計書
 ・テーブル定義書：https://docs.google.com/spreadsheets/d/1bvPPlVDuxdBGtO4FzSMbsihdVozdcg3eua-R-Rjb0p8/edit?usp=sharing
 ・アプリケーション詳細設計書：https://docs.google.com/spreadsheets/d/1WYcfLXFf3UFE3RrA3oDBel5kSUvn142Bbef8fX2b-P0/edit?usp=sharing
 
-##チャレンジ要素
+
+## チャレンジ要素
 ・Google Maps API機能の実装
 ・いいね機能の実装
 
