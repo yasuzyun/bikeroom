@@ -32,7 +32,7 @@ require 'rails_helper'
     end
   end
   
-  # describe "[1]会員ログイン後のテスト"  do
+ # describe "[1]会員ログイン後のテスト"  do
   #   before do
   #   visit "/"
   #   click_on "ログイン"
