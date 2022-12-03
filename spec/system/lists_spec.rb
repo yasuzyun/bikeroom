@@ -32,41 +32,5 @@ require 'rails_helper'
     end
   end
   
- # describe "[1]会員ログイン後のテスト"  do
-  #   before do
-  #   visit "/"
-  #   click_on "ログイン"
-  #   FactoryBot.create(:customer)
-  # end
-  #   context "マイページ" do 
-  #   it "URLが正しい" do
-  #     click_on "マイページ"
-  #     expect(current_path).to eq "/users/5"
-  #   end
-  #   it "会員情報編集ボタンがある" do
-  #     visit "/users/5"
-  #     expect(page).to have_content "会員情報を編集する"
-  #     click_on "会員情報を編集する"
-  #     expect(current_path).to eq "/users/5/edit"
-  #   end
-    # it "記事編集ボタンがある" do
-    #   visit "/users/5"
-    #   expect(page).to have_content "編集する"
-    #   click_on "編集する"
-    #   expect(current_path).to eq "/articles/1/edit"
-    # end
-    # it "記事削除ボタンがある" do
-    #   visit "/users/1"
-    #   expect(page).to have_content "削除する"
-    #   click_on "削除する"
-    #   expect(current_path).to eq "/articles"
-    # end
-  # end
-  # context "新規登録画面" do
-  #   it "URLが正しい" do
-  #     click_on "新規登録"
-  #     expect(current_path).to eq "/customers/sign_up"
-  #   end
-  # end
-# end
+
 end

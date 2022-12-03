@@ -8,7 +8,7 @@ def create
 end
 
 def destroy
-  @article_like = Like.new(customer_id: current_customer.id, article_id: params[:article_id])
+  @article_like = Like.find_by(customer_id: current_customer.id, article_id: params[:article_id])
   @article_like.destroy
   redirect_to article_path(params[:article_id])
 end

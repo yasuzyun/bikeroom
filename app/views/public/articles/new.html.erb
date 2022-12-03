@@ -1,4 +1,17 @@
-
+<!-- <%= form_with model: @article, url: new_article_path(current_customer), method: :post do |f|  %>
+      <% if @article.errors.any? %>
+      <div class="row justify-content-center">
+        <div class="alert alert-warning">
+        <%= @article.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @article.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
+      </div>
+      <% end %>
+  --
      <span>現在ログイン中のユーザー：<%= current_customer.last_name %> さん</span>
     <p><%= link_to "投稿一覧", articles_path(@articles), class:"btn btn-success ml-5"%></p>
   
