@@ -38,12 +38,12 @@ class Public::ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.customer_id = current_customer.id
     @customer = current_customer
-     if @article.save!
+     if @article.save
       redirect_to articles_path, notice: "新しい記事を投稿しました。"
      else
       @articles = Article.all
-      @article = Article.all
-      render :index
+      #@article = Article.all
+      render :new
      end
   end
     

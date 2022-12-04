@@ -1,22 +1,11 @@
-<!-- <%= form_with model: @article, url: new_article_path(current_customer), method: :post do |f|  %>
-      <% if @article.errors.any? %>
-      <div class="row justify-content-center">
-        <div class="alert alert-warning">
-        <%= @article.errors.count %>件のエラーが発生しました
-        <ul>
-          <% @article.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-        </div>
-      </div>
-      <% end %>
-  --
-     <span>現在ログイン中のユーザー：<%= current_customer.last_name %> さん</span>
+ <span>現在ログイン中のユーザー：<%= current_customer.last_name %> さん</span>
     <p><%= link_to "投稿一覧", articles_path(@articles), class:"btn btn-success ml-5"%></p>
-  
-      <h2 style="text-align:center; color:white; background-color:black;">投稿</h2>
+    
+        <h2 style="text-align:center; color:white; background-color:black;">投稿</h2>
             <%= form_with model: Article.new, local: true do |f|  %>
+            
+   
+            
               <div class="form-group col-5">
                 <label for="articles_title">タイトル</label>
                 <%= f.text_field :title , class: "form-control article_title"%>

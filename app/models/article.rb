@@ -13,7 +13,7 @@ class Article < ApplicationRecord
   validates :lat, presence: true
   validates :lng, presence: true
   validates :address, presence: true, length: {maximum: 200} 
-  
+ 
   # バリデーションの前に送信されたaddressの値によってジオコーディング(緯度経度の算出)を行う
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
