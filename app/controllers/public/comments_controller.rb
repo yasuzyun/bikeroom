@@ -3,6 +3,7 @@ class Public::CommentsController < ApplicationController
     before_action :set_article, only: [:create, :destroy] 
     
   def create
+    #byebug
   @comment = @article.comments.create(comment_params)
   if @comment.save
     redirect_to article_path(@article), notice: 'コメントしました'
@@ -21,13 +22,6 @@ def destroy
     render article_path(@article)
   end
 end
-  
-  
-  
-  #Comment.find(params[:id]).destroy
-  #redirect_to article_path(@article), notice: 'コメントしました'
-
-
 
 private
 def set_article

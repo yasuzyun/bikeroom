@@ -77,8 +77,9 @@
 <h4 style="text-align:center; color:white; background-color:orange;">コメント</h4>
      <div class="dai-come">
           <%= form_with model:[@article, @comment], local: true do |f| %>
-        <!--<input type="text" name:comment_content size="20" required>-->
-        <%= f.text_area :comment_content %>
+          
+        <input type="text" name="comment[comment_content]" size="20" required>
+     
         <%= f.submit "コメント" %>
 　　　 <% end %>
 　　 </div>
