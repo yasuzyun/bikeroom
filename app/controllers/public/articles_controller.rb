@@ -35,6 +35,7 @@ class Public::ArticlesController < ApplicationController
   end
 
   def create
+     #byebug
     @article = Article.new(article_params)
     @article.customer_id = current_customer.id
     @customer = current_customer
