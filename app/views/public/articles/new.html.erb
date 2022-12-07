@@ -4,11 +4,18 @@
     
    
         <h2 style="text-align:center; color:white; background-color:black;">投稿</h2>
-            <%= form_with model: Article.new, local: true do |f|  %>
-            
-      
-            
-              <div class="form-group col-5">
+            <%= form_with model: @article, local: true do |f|  %>
+            <% if @article.errors.any? %>
+            <div class = "alert">
+             <ul>
+             <% @article.errors.full_messages.each do |message| %>
+             <li><%= message %></li>
+             <% end %>
+             </ul>
+            </div>
+            <% end %>
+
+            <div class="form-group col-5">
                 <label for="articles_title">タイトル</label>
                 <%= f.text_field :title , class: "form-control article_title"%>
               </div>

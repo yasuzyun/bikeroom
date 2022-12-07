@@ -22,7 +22,8 @@ class Public::ArticlesController < ApplicationController
   end
 
   def new
-   
+ 
+   @article = Article.new
     @last_article = Article.last
     @articles = Article
       .all
