@@ -88,3 +88,4 @@ gem 'rubocop-rails', require: false
 gem 'rubocop-minitest', require: false
 gem 'rubocop-packaging', require: false
 gem 'rubocop-rspec'
+gem 'rails-i18n'

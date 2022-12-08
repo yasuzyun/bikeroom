@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+      article:
+        title: タイトル
+        body: 内容
+        lat: 緯度
+        lng: 経度
+        address: 場所
+  activemodel:   # Formオブジェクトを用いた場合
+     attributes:
+       order_object:
+         post_code: 郵便番号
