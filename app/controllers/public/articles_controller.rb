@@ -74,6 +74,7 @@ class Public::ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
+    @comment = current_customer.comments.find_by(article_id: @article.id)
     if @article.customer != current_customer
       redirect_to  new_article_path
     else

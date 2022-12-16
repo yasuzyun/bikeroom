@@ -15,13 +15,16 @@ class Public::CommentsController < ApplicationController
 
 def destroy
     @comment = Comment.find(params[:id])
-  if @comment.customer != current_customer
+  if @comment.destroy
     redirect_to article_path(@article), notice: 'コメントを削除しました'
   else
     flash.now[:alert] = 'コメント削除に失敗しました'
     render article_path(@article)
   end
 end
+  
+  
+ 
 
 private
 def set_article
