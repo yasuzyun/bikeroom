@@ -14,7 +14,8 @@ class Public::CommentsController < ApplicationController
   end
 
 def destroy
-    @comment = Comment.find(params[:id])
+    #@article = Article.find(params[:id])
+    @comment = current_customer.comments.find_by(article_id: @article.id)
   if @comment.destroy
     redirect_to article_path(@article), notice: 'コメントを削除しました'
   else
