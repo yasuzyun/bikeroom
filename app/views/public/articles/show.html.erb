@@ -88,8 +88,9 @@
             <% @comments.each do |comment| %>
                 <li class="comments">
                    <%= comment.comment_content %>
-                  <%= link_to 'コメントを削除する', article_comment_path(@article.id,comment.id), confirm: 'Are you sure?', method: :delete %>
+                    <%= link_to 'コメントを削除する', article_comment_path(@article.id,comment.id), confirm: 'Are you sure?', method: :delete %>
                </li>
+               
              <% end %>
         </div>
      <div class="dai-come">
