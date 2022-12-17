@@ -88,10 +88,18 @@
             <% @comments.each do |comment| %>
                 <li class="comments">
                    <%= comment.comment_content %>
-                    <%= link_to 'コメントを削除する', article_comment_path(@article.id,comment.id), confirm: 'Are you sure?', method: :delete %>
-               </li>
-               
-             <% end %>
+            
+                   
+                    <% if @article.customer == current_customer %>  
+                    <%= link_to '投稿削除',article_comment_path(@article.id), method: :delete, data: {confirm:'削除してもいいですか？'}%>
+                    <% else %>
+                   <td></td>
+                   <td></td>
+                   <% end %>
+                  <% end %> 
+             </li>
+                    <%#= link_to 'コメントを削除する', article_comment_path(@article.id,comment.id), confirm: 'Are you sure?', method: :delete %>
+          
         </div>
      <div class="dai-come">
  <% if @article.liked?(current_customer) %>
