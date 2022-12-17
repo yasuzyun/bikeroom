@@ -1,0 +1,16 @@
+current directory: /home/ec2-user/bikeroom/vendor/bundle/ruby/3.1.0/gems/haml-6.0.7/ext/haml
+/home/ec2-user/.rbenv/versions/3.1.2/bin/ruby -I /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20221110-7901-k1jgsy.rb extconf.rb
+creating Makefile
+
+current directory: /home/ec2-user/bikeroom/vendor/bundle/ruby/3.1.0/gems/haml-6.0.7/ext/haml
+make DESTDIR\= clean
+
+current directory: /home/ec2-user/bikeroom/vendor/bundle/ruby/3.1.0/gems/haml-6.0.7/ext/haml
+make DESTDIR\=
+compiling haml.c
+compiling hescape.c
+linking shared-object haml/haml.so
+
+current directory: /home/ec2-user/bikeroom/vendor/bundle/ruby/3.1.0/gems/haml-6.0.7/ext/haml
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 haml.so ./.gem.20221110-7901-axdwl9/haml
