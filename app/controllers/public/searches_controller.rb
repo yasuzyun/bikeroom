@@ -7,8 +7,8 @@ class Public::SearchesController < ApplicationController
 		@method = params[:method]
 		if @model == 'customer'
 			@records = Customer.search_for(@content, @method)
-		#else
-		#	@records = Article.search_for(@content, @method)
+		else
+			@records = Article.search_for(@content, @method)
 		end
 	end
 end
