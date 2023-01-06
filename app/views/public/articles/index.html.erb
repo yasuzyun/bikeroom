@@ -10,9 +10,9 @@
           <span class="sabutou"><%= article.body %> </span>
         </span>
         
-        　<td class=<%= "like-" + @article.id.to_s %> >
-            <%= render "likes/btn", article: @article %>
-          </td>
+        　<%#--<td class=<%= "like-" + @article.id.to_s %> > 
+            <%#= render "likes/btn", article: @article %>
+          <%#--</td>--%>
         
          <span class="sabudai"><%= link_to 'コメントする',article_path(article) %></span>
      </div>
