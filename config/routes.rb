@@ -64,6 +64,8 @@ devise_scope :customer do
   get 'maps/index'
   resources :maps, only: [:index]
 
+post "likes/:article_id/create", to: "likes#create", constraints: {article_id: /\d+/}, as: :likes_create
+post "likes/:article_id/delete", to: "likes#delete", constraints: {article_id: /\d+/}, as: :likes_delete
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 end
