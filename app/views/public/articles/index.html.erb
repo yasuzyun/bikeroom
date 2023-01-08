@@ -10,17 +10,6 @@
           <span class="sabutou"><%= article.body %> </span>
         </span>
         
-        
-        <div class="like_button_on">
-    <%= link_to "いいね済み", likes_delete_path(article_id: @article.id), {method: "post", remote: true} %>
-    <%= @like_count %>
-</div>
-<div class="like_button">
-    <%= link_to "いいね", likes_create_path(article_id: @article.id), {method: "post", remote: true} %>
-    <%= @like_count %>
-</div>
-       
-        
          <span class="sabudai"><%= link_to 'コメントする',article_path(article) %></span>
      </div>
       
