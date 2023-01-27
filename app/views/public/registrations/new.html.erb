@@ -4,39 +4,36 @@
   <%= render "public/shared/error_messages", resource: resource %>
 
   
-         <div class="input">
+  
           
-            <div class="nm">
+            <div class="field">
             <th>名前</th>
             <td class="sign-up-small-cell">(姓)</td>
             <td><%= f.text_field :last_name, autofocus: true %></td>
             <td class="sign-up-small-cell">(名)</td>
             <td><%= f.text_field :first_name, autofocus: true %></td>
             </div>
-          </div>
-          
-          <div class="input">
             
-            <div class="nm">
+            <div class="field">
             <th>フリガナ</th>
             <td class="sign-up-small-cell">(セイ)</td>
             <td><%= f.text_field :last_name_kana, autofocus: true %></td>
             <td class="sign-up-small-cell">(メイ)</td>
             <td><%= f.text_field :first_name_kana, autofocus: true %></td>
             </div>
-          </div>
-          
-          <div class="input">
-            <div class="nm">
+  
+       
+       
+            <div class="field">
        
             <th>メールアドレス</th>
             <td class="sign-up-small-cell"></td>
             <td><%= f.email_field :email, autofocus: true, autocomplete: "email"%></td>
            </div>
-          </div>
+       
           
-          <div class="input">
-            <div class="nm">
+        
+            <div class="field">
       
             <th>パスワード（６文字以上）</th>
             <td class="sign-up-small-cell"></td>
@@ -45,16 +42,16 @@
            <% end %><br />-->
          <td><%= f.password_field :password, autocomplete: "new-password" %></td>
             </div>
-           </div>
+          
            
-           <div class="input">
-             <div class="nm">
+          
+             <div class="field">
     
             <th>パスワード（確認用）</th>
             <td class="sign-up-small-cell"></td>
             <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
             </div>
-           </div>
+          
           </br>
        
   <div class="actions">
