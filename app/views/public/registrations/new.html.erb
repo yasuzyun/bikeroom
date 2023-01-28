@@ -37,9 +37,9 @@
       
             <th>パスワード（６文字以上）</th>
             <td class="sign-up-small-cell"></td>
-<!-- <% if @minimum_password_length %>
+             <% if @minimum_password_length %>
           <td>(<%= @minimum_password_length %> characters minimum)</td>
-           <% end %><br />-->
+           <% end %><br />
          <td><%= f.password_field :password, autocomplete: "new-password" %></td>
             </div>
           
