@@ -1,4 +1,4 @@
-<% if @model == '' %>
+<% if @model == 'customer' %>
 	<h3>ユーザー search for "<%= @content %>"</h3>
-  <%= render 'articles/index', articles: @records %>
+  <%= render 'customer/index', articles: @records %>
 <% end %>
